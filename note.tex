@@ -1,7 +1,17 @@
 
 \documentclass[12pt,twoside,twocolumn,a4paper]{article}   %book(parts, sections, subsections, chapters...),report（parts, sections, subsections, chapters...）,article（parts, sections, subsections...),letter
 \NeedsTeXFormat{LaTeX2e}[1994/06/01]
-\pagenumbering{roman}
+%调用宏包，宏包围文件的基本名，宏包被保存在一个后缀为.sty的文件中
+%\usepackage{宏包}
+%\usepackage[选项1, 选项2, ...]{宏包1, 宏包2, ...}
+%\pagestyle{样式}
+\pagestyle{myheadings} \markright{Exercises} %plain,empty,headings,myheadings
+\thispagestyle{plain} %当前页的样式
+%headings和myheadings，出现在页眉中的信息用下面的声明确定
+%\makeright{右边纸页眉}
+%\makeboth{左边纸页眉}{右边纸页眉}  文档类的选项为\twoside
+\pagenumbering{arabic} %roman Roman alpha Alpha
+\setcounter{page}{2} %页码不从1开始
 \begin{document}
 	%特殊字符：
 	\#\$\&\_\"\%\^\{\}
