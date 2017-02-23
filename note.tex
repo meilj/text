@@ -13,6 +13,28 @@
 \pagenumbering{arabic} %roman Roman alpha Alpha
 \setcounter{page}{2} %页码不从1开始
 \begin{document}
+	%标题页形式
+	%1
+	%\begin{titlepage}
+	%How to Write DVI Drivers
+	%\end{titlepage}
+	%2
+	%\title{How to Write DVI Drivers}
+	%\author{name}
+	%\date{2017.2.23}
+	%\maketitle
+	%
+	\title{How to Write DVI Drivers}
+	\author{Helmut kopka\thanks{tel. %\thanks{脚注文本}，可以出现在title，author，date文本的任何地方
+		05556-401-451 FRG}\\ %\\换行
+		Max-Planck-institut\\
+		f\"ur Amronomie
+		\and %\and分开多个作者
+		PhillipG,Hardy
+		\thanks{tel.
+		319-824-7134 USA}\\
+		University\\of Iowa}
+	\maketitle %以出现在\title，\author, \date,\thanks中的条目生成标题页
 	%特殊字符：
 	\#\$\&\_\"\%\^\{\}
 
@@ -44,5 +66,10 @@
 	\end{quote}
 	%Practice 2.1
 	Today (\today) the rate of exchange between the British pound and American dollar is \pounds 1 = \$1.63,an increase of 1\% over yesterday.
+
+\setlength{\parskip}{1.5ex} %两个段落之间的距离
+\setlength{\parindent}{0em} %段落第一行的缩进量
+\renewcommand{\baselinestretch}{2} %两条基线之间正常间距的数值
+\setlength{\textwidth}{12.5cm} %文本行宽
 \end{document}
 
