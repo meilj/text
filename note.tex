@@ -35,6 +35,25 @@
 		319-824-7134 USA}\\
 		University\\of Iowa}
 	\maketitle %以出现在\title，\author, \date,\thanks中的条目生成标题页
+	%摘要
+	\begin{abstract}
+  	Abstract text
+	\end{abstract} %book没有摘要
+	\setcounter{tocdepth}{3} %出现在目录表中章节深度
+	\tableofcontents %目录表的生成和显示
+	%生成图和表的清单列表
+	\listoffigures
+	\listoftables
+	\section{Hello China} China is East Asia.
+		\subsection{Hello Beijing} Beijing is the capital of china.
+			\subsubsection{Hello Dongcheng District}
+				\paragraph{Tian'anmen Square} is in the center of Beijing
+					\subparagraph{Chairman Mao} is in the center of Tian'anmen Square
+			\subsection{Hello Guangzhou}
+				\paragraph{Sun Yat-sen University} is the best university in Guangzhou.
+	%\part,\chapter %article中不可用,\subsection,\paragraph,\section,\subsubsection,\subparagraph
+	%book和report中，\chapter章标题是单个数字为编号，且总是开始新页，\section得到的是两个数字
+
 	%特殊字符：
 	\#\$\&\_\"\%\^\{\}
 
@@ -44,6 +63,11 @@
 	$-$
 
 	selfful
+	i.~e.,Prof.~Jones,Phys.\ Rev. %接在小写字母后的句号认为是句子的结束，这时会插入额外的单词间距
+	this is sentence ends with NASA\@. %紧接在大写字母后的句号不任务是句子的介绍，而认为是缩写，加上\@才是结束
+	\frenchspacing %不增加某些情形中的额外单词间距，可以不用\@
+	\nonfrenchspacing  %恢复到原来的方式
+	``\,`Beginning' and`'End'\,"
 	
 	\today
 
@@ -67,9 +91,12 @@
 	%Practice 2.1
 	Today (\today) the rate of exchange between the British pound and American dollar is \pounds 1 = \$1.63,an increase of 1\% over yesterday.
 
-\setlength{\parskip}{1.5ex} %两个段落之间的距离
-\setlength{\parindent}{0em} %段落第一行的缩进量
-\renewcommand{\baselinestretch}{2} %两条基线之间正常间距的数值
-\setlength{\textwidth}{12.5cm} %文本行宽
+	\setlength{\parskip}{1.5ex} %两个段落之间的距离
+	\setlength{\parindent}{0em} %段落第一行的缩进量
+	\renewcommand{\baselinestretch}{2} %两条基线之间正常间距的数值
+	\setlength{\textwidth}{12.5cm} %文本行宽
+	\begin{appendix}
+		appendix text
+	\end{appendix}
 \end{document}
 
