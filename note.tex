@@ -1,5 +1,5 @@
 
-\documentclass[12pt,twoside,twocolumn,a4paper]{article}   %book(parts, sections, subsections, chapters...),report（parts, sections, subsections, chapters...）,article（parts, sections, subsections...),letter
+\documentclass[12pt,twoside,a4paper]{article}   %book(parts, sections, subsections, chapters...),report（parts, sections, subsections, chapters...）,article（parts, sections, subsections...),letter
 \NeedsTeXFormat{LaTeX2e}[1994/06/01]
 %调用宏包，宏包围文件的基本名，宏包被保存在一个后缀为.sty的文件中
 %\usepackage{宏包}
@@ -44,6 +44,7 @@
 	%生成图和表的清单列表
 	\listoffigures
 	\listoftables
+	\today
 	\section{Hello China} China is East Asia.
 		\subsection{Hello Beijing} Beijing is the capital of china.
 			\subsubsection{Hello Dongcheng District}
@@ -51,25 +52,43 @@
 					\subparagraph{Chairman Mao} is in the center of Tian'anmen Square
 			\subsection{Hello Guangzhou}
 				\paragraph{Sun Yat-sen University} is the best university in Guangzhou.
+	\section{else}
 	%\part,\chapter %article中不可用,\subsection,\paragraph,\section,\subsubsection,\subparagraph
 	%book和report中，\chapter章标题是单个数字为编号，且总是开始新页，\section得到的是两个数字
 
 	%特殊字符：
-	\#\$\&\_\"\%\^\{\}
-
-	``father-in-law'' `--' ---
-
+	\#\$\&\_\"\%\^\{\}\\
+	``father-in-law'' `--' ---\\
 	%负号 
-	$-$
+	$-$\\
 
-	selfful
-	i.~e.,Prof.~Jones,Phys.\ Rev. %接在小写字母后的句号认为是句子的结束，这时会插入额外的单词间距
-	this is sentence ends with NASA\@. %紧接在大写字母后的句号不任务是句子的介绍，而认为是缩写，加上\@才是结束
+	i.~e.,Prof.~Jones,Phys.\ Rev.\\ %接在小写字母后的句号认为是句子的结束，这时会插入额外的单词间距
+	this is sentence ends with NASA\@.\\ %紧接在大写字母后的句号不任务是句子的介绍，而认为是缩写，加上\@才是结束
 	\frenchspacing %不增加某些情形中的额外单词间距，可以不用\@
 	\nonfrenchspacing  %恢复到原来的方式
 	``\,`Beginning' and`'End'\,"
-	
-	\today
+	%倾斜校正\/
+	{\slshape slanted\/} spacing\\ %当倾斜字母后接逗号或句号时，可以不加
+	%\textsl \textit会自动加上倾斜校正
+ 	\textsl{slanted}\\
+ 	%如果不希望这种校正，可以在倾斜字母后用命令\nocorr
+	%取消连写\/
+ 	self\/ful			selfful\\
+ 	%插入任意距离
+ 	This is\hspace{1cm}1cm\\
+ 	This is \hspace{1cm}1cm\\
+ 	This is \hspace{1cm} 1cm\\
+ 	\hspace*{3em} This is 1cm\\ %em为当前字样中字母M的宽度
+ 	%没有*，可以使得间隔位于两行之间时，就去掉这个空档，如同在一行的开头，空格要去掉一样
+ 	%*形式，不管任何情况，都会插入空白
+ 	Left \hfill Right\\ %\hfill是\hspace{\fill}的缩写
+ 	Left \hfill Center \hfill Right\\
+	\quad insert spacing\\
+	\qquad insert spacing\\
+ 	Start \dotfill\ Finish\\ %插入....,和\hfill用法一样
+ 	Left \hrulefill\ Center \hrulefill\ Right\\ %插入————————,和\hfill用法一样
+ 	Departure \dotfill\dotfill\dotfill\ 8:30 \hfill\hfill Arrival \hrulefill\ 11:45\\
+ 	%断行\\[距离]，\\*[距离]，距离为额外间距 \newline
 
 	The \LaTeX{} logo
 
@@ -78,8 +97,7 @@
 	The {\LaTeX} logo
 
 	\begin{quote}
-		{\bfseries This text appears in bold face}
-
+		{\bfseries This text appears in bold face}\\
 		\setlength{\parindent}{0.5cm} this text appears in bold face
 		\setlength{\textwidth}{12.5cm}
 			\S 
