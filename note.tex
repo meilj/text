@@ -103,7 +103,90 @@
  	%断行\\[距离]，\\*[距离]，距离为额外间距 \newline
 	%linebreak[数],\nolinebreak
 	\vfill	%\bigskip   \medskip  \smallskip  \par
-
+		%强调\em \emph
+	This is the easiest way to {\em emphasize} short ...
+	A more logical method of \emph{emphasizing} a word ...
+	The {\em first}, second, and {\em third font switch}
+	The {\em first, {\em second, and {\em third font switch}}}
+	%字体尺寸的修改(从小到大)\tiny \scriptsize \footnotesize \small \normalsize \large \Large \LARGE \huge \Huge
+	%\normalsize为标准尺寸10pt
+	normal {\large large \Large larger} normal again
+	normal large larger normal again
+	\sl slanted {\Large larger}
+	%自然行间距\baselineskip，每次修改字体尺寸，\baselineskip都会被重设为相应的自然行距，由\setlength所做的设置也就失效了
+	\setlength{\baselineskip}{15pt}
+	\renewcommand{\baselinestretch}{1.5} %对所有尺寸的字体都保持相应的间距
+	%字体命令
+	%family: \textrm{文本} \texttt{文本} \textsf{文本}
+	%Shape： \textup{文本} \textit{文本} \textsl{文本} \textsc{文本}
+	%Series: \textmd{文本} \textbf{文本}
+	%默认值: \textnormal{文本}
+	%强调:   \emph{文本}
+	normal and \textbf{bold and \textsl{slanted} and back} again
+	\textit {come italics\nocorr} without correction {\slshape italics \nocorr\textup{without} correction}
+	%字符集与符号\symbol{数}
+	\symbol{62} \symbol{28} \symbol{'34} \symbol{"1C}
+	{\tt\symbol{'40}\symbol{'42}\symbol{'134}}
+	\newpage
+	%居中文本
+	\begin{center}
+	 first row ,second row, ...
+	\end{center}
+	\centering
+	\centerline{text}
+	%单边调整
+	\begin{flushleft}
+		Unilateral adjustment
+	\end{flushleft}
+	\begin{flushright}
+		Unilateral adjustment
+	\end{flushright}
+	\raggedleft Unilateral adjustment\\
+	\raggedright Unilateral adjustment\\
+	%两边缩进
+	\begin{quote}
+		Indent both sides
+	\end{quote}
+	\begin{quotation}
+		Indent both sides
+	\end{quotation}
+	%诗歌缩进
+	\begin{verse}
+		verse
+	\end{verse}
+	%列表
+	\begin{itemize}	
+		\item List text
+	\end{itemize}
+	\begin{enumerate}
+		\item list text
+	\end{enumerate}
+	\begin{description}
+		\item list text
+	\end{description}
+	%itermize样例
+	\begin{itemize}
+	\item aaaa
+	\item bbbb
+	\item cccc
+	\end{itemize}
+	%enumerrate样例
+	\begin{enumerate}
+	\item aaaa
+	\item bbbb
+	\end{enumerate}
+	%description样例
+	\begin{description}
+	\item[objective] aaaa
+	\item[Example] bbbb
+	\item[else] cccc
+	\end{description}
+	%改变标签样式\item[样式]，如\item[+]
+	%参考文献
+	\begin{thebibliography}{+} %标签样式
+		\bibitem[Label]{Keyword}references
+	\end{thebibliography}
+	\newpage
 	The \LaTeX{} logo
 
 	The \LaTeX\ logo
