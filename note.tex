@@ -164,6 +164,21 @@
 	\begin{description}
 		\item list text
 	\end{description}
+	%广义列表
+	\begin{list}{标准标签}{列表声明}
+		\item list item %列表中的项
+	\end{list}
+	\newcounter{fig}
+	\begin{list}{\bfseries\upshape Figure \arabic{fig}:}
+		{\usecounter{fig}
+		\setlength{\labelwidth}{2cm}\setlength{\leftmargin}{2.6cm}
+		\setlength{\labelsep}{0.5cm}\setlength{\rightmargin}{1cm}
+		\setlength{\parsep}{0.5ex plus0.2ex minus0.1ex}
+		\setlength{\itemsep}{0ex plus0.2ex} \slshape}
+		\item Page format with head, body, and foot, showing the meaning of the various elements involved.
+		\item Format of a general list showing its elements.
+		\item A demonstration of some of the possibilities for drawing pictures with \LaTeX.
+	\end{list}
 	%itermize样例
 	\begin{itemize}
 	\item aaaa
@@ -185,6 +200,14 @@
 	%参考文献
 	\begin{thebibliography}{+} %标签样式
 		\bibitem[Label]{Keyword}references
+	\end{thebibliography}
+	\newpage
+	For additional information about \LaTeX\ and \TeX\ see \cite{lamport} and \cite{knuth, knuth:a}.
+	\begin{thebibliography}{99}
+		\bibitem{lamport} Leslie Lamport. \textsl{\LaTeX\ -- A Document Preparation System}.Addison--Wesley Co.,Inc.,Reading,MA,1985
+		\bibitem{knuth} Donald E. Knuth.\textsl{Computers and Typesetting Vol.\ A--E}.Addison--Wesley Co., Inc.,Reading,MA,1984-1986
+		\bibitem[6a]{knuth:a} Vol A:\textsl{The \TeX book}, 1984
+		\bibitem[6b]{knuth:b} Vol B:\textsl{\TeX: The Program.},1986
 	\end{thebibliography}
 	\newpage
 	The \LaTeX{} logo
