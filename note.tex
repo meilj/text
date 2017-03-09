@@ -179,6 +179,18 @@
 		\item Format of a general list showing its elements.
 		\item A demonstration of some of the possibilities for drawing pictures with \LaTeX.
 	\end{list}
+
+	\newenvironment{figlist}{\begin{list}
+		{\bfseries\upshape Figure \arabic{fig}:}
+		{\usecounter{fig}...{0ex plus0.2ex}\slshape}}
+		{\end{list}}
+	\begin{figlist}
+		\item A
+	\end{figlist}
+	%平凡列表,相当于列表，标签是空的
+	\begin{trivlist}
+		\centering \item[] text（内部文本）
+	\end{trivlist}
 	%itermize样例
 	\begin{itemize}
 	\item aaaa
