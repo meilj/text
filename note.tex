@@ -209,6 +209,24 @@
 	\item[else] cccc
 	\end{description}
 	%改变标签样式\item[样式]，如\item[+]
+	%定理型的声明 \newtheore{结构类型}{结构标题}[其他计数器] \newtheorem{结构类型}[编号来源]{结构名称}
+	\newtheorem{theorem}{Theorem}
+	\newtheorem{axiom}{Axiom}
+	\begin{theorem}[Balzano--Weierstrass]
+		Every ...
+	\end{theorem}
+	\begin{axiom}
+		The natural numbers form ......
+	\end{axiom} 
+	%\newthoerem{subthrm}[theorem]{Sub-Theorem}
+	%制表符
+	\begin{tabbing}
+		Type\qquad\= Quality\quad\=
+		Color\quad\= Price\\[0.8ex]
+		Paper \> med. \>white \> low \\
+		Leather \> good \> brown \> high\\
+		Card	\> bad \> gray \> med.
+	\end{tabbing}
 	%参考文献
 	\begin{thebibliography}{+} %标签样式
 		\bibitem[Label]{Keyword}references
