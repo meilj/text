@@ -219,13 +219,38 @@
 		The natural numbers form ......
 	\end{axiom} 
 	%\newthoerem{subthrm}[theorem]{Sub-Theorem}
-	%制表符
+	%制表符 在任一行上都可以重设或增加制表位，如果有足够的\>命令跳到下一个制表位，用\=命令就会插入一个制表位，否则它会重设下一个制表位 \pushtabs保存制表位 \poptabs激活保存的制表位
+	%tabbing环境中没有自动断行
+	%tabbing环境中\hfill、\hrulefill、\dotfill命令没有作用
 	\begin{tabbing}
 		Type\qquad\= Quality\quad\=
 		Color\quad\= Price\\[0.8ex]
 		Paper \> med. \>white \> low \\
 		Leather \> good \> brown \> high\\
-		Card	\> bad \> gray \> med.
+		Card	\> bad \> gray \> med.\\
+		Old column 1 \= Old Column 2\\
+		Left Column \> Middle Col
+		\= Extra col\\
+		New col 1 \= New col 2 \>
+		Old col 3\\
+		Column 1 \> Column 2 \> Column 3\\
+		%样本行 为了不显示样本行，该行文本不是用\\结束，而是用\kill
+		\hspace*{3cm} \=sample column \= \hspace{4cm} \= \kill
+		\a`o \a'o \a=o
+	\end{tabbing}
+	\`o \'o \=o
+	\begin{tabbing}
+		Graefruit; \= \kill
+		Apples: \> consumed by: \=people\+\+\\
+		horses \\
+		and \' sheep\-\\
+		reasonably juicy\-\\
+		Grapefruits: \> a delicacy\\
+		\pushtabs
+		(see also: \= melons\\
+		\> pumpkins)\\
+		\poptabs
+		Horses \> feed on \>apples
 	\end{tabbing}
 	%参考文献
 	\begin{thebibliography}{+} %标签样式
