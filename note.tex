@@ -252,6 +252,49 @@
 		\poptabs
 		Horses \> feed on \>apples
 	\end{tabbing}
+	\newpage
+	%盒子：LR盒子、段落盒子、标尺盒子
+	%LR盒子：水平的从左到右的有序材料组成
+	%\mbox{文本} \makebox[宽度][位置]{文本}
+	%\fbox{文本} \framebox[宽度][位置]{文本}
+	%位置参数 l(文本左对齐) r(文本右对齐) s(伸展文本，已达到所定义的宽度)
+	\makebox[3.5cm]{centered text}\\
+	\framebox[3.5cm][r]{right justified}\\
+	\framebox[3.5cm][s]{stretched\dotfill text}\\
+	\framebox[2mm]{centered}\\
+	\makebox[0pt][l]{/}S\\
+	\framebox[6\totalheight]{Text}\\	%\width(盒子的自然宽度) \height(从基线到顶部的距离) \depth(从基线到底部的距离) \totalheight(\height加上\depth)
+	\newsavebox{\boxname} %创建盒子
+	\sbox{\boxname}{text}	%\savebox{\boxname}[宽度][位置]{文本}--保存盒子
+	\usebox{\boxname}\\ %把保存的文本当作一个整体插入文档中
+	\begin{lrbox}{\boxname}
+		text
+	\end{lrbox} %等价于\sbox{\boxname}{文本}
+	%LR盒子的竖直移位
+	%\raisebox{上移量}[高度][深度]{文本}
+	Baseline \raisebox{1ex}{high} and \raisebox{-1ex}{low}
+	and back again\\
+	%子段盒子和小页
+	%\parbox[位置]{宽度}{文本}
+	%\begin{minipage}[位置]{宽度}文本 \end{minipage}
+	%位置可取值：b(盒子的底边与当前基线对齐) t(顶行文本与当前基线对齐)
+	\parbox{3.5cm}{\sloppy this is a 3.5 cm wide parbox.It is vertically ccentered on the}
+	\hfill CURRENT LINE \hfill
+	\parbox{5.5cm}{Narrow pages are hard to format. They usually produce many warning message on the terminal. The command
+	{\tt\symbol{92}sloppy} can stop this.}\\
+	\begin{minipage}[b]{4.3cm}
+		The minipage environment creates a vertical box like the parbox command.The bottom line of this minipage is aligned with the
+	\end{minipage}\hfill
+	\parbox{3.0cm}{middle of this narrow parbox,which in turn is aligned with}
+	\hfill
+	\begin{minipage}[t]{3.8cm}
+		the top line of the right hand minipage. It is recommended that the user experiment with the positioning arguments to get used to their effects.
+	\end{minipage}
+	%段落盒子：竖直堆积的行组成
+
+	%标尺盒子：黑色填充的实心矩形，通常用来画水平或竖直线
+
+	\newpage
 	%参考文献
 	\begin{thebibliography}{+} %标签样式
 		\bibitem[Label]{Keyword}references
