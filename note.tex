@@ -290,10 +290,32 @@
 	\begin{minipage}[t]{3.8cm}
 		the top line of the right hand minipage. It is recommended that the user experiment with the positioning arguments to get used to their effects.
 	\end{minipage}
+	%竖直摆放的问题
+	\begin{minipage}[b]{8.5cm}
+		\parbox[t]{4.3cm}{The boxes are made visible here by framing them,} \hfill
+		\parbox[t]{3.0cm}{and by marking the baselines(the vertical alignment points) with black dots}\\
+		\mbox{}\\	%恰好顶部对齐，或者第一行文本对齐
+	\end{minipage}	
+	of text\\
+	%加入没有内容的第一行的方法：\mbox{} \\ , \mbox{}[-\baselineskip]
 	%段落盒子：竖直堆积的行组成
+	%具有指定高度的段落盒子
+	%\parbox[位置][高度][内部位置]{宽度}{文本}
+	%\begin{minipage}[位置][高度][内部位置]{宽度} 文本 \end{minipage}
+	%高度参数可以同\makebox和\framebox中的宽度一样，使用\heght, \width, \depth, \totalheight
+	%内部位置只有当给定了高度时才有意义，可取的值为t(要文本靠盒子的顶部), b(把文本推向盒子的底部), c(竖直居中), s(伸展文本以填满整个盒子)
+	\begin{minipage}[t][2cm][t]{3cm}
+		This is a minipage of height 2~cm with the text at the top.
+	\end{minipage}\hrulefill
+	\parbox[t][2cm][c]{3cm}{In this parbix, the text is centered on the same height.}\hrulefill
+	\begin{minipage}[t][2cm][b]{3cm}
+		In this third paragraph box, the text is at the bottom.
+	\end{minipage}
 
 	%标尺盒子：黑色填充的实心矩形，通常用来画水平或竖直线
-
+	%\rule[提升]{宽度}{高度}
+	\rule{8cm}{3mm}\\
+	\fbox{\rule[-2mm]{0cm}{6mm}Text}
 	\newpage
 	%参考文献
 	\begin{thebibliography}{+} %标签样式
