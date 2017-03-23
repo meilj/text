@@ -316,6 +316,62 @@
 	%\rule[提升]{宽度}{高度}
 	\rule{8cm}{3mm}\\
 	\fbox{\rule[-2mm]{0cm}{6mm}Text}
+	%类似\parbox命令和minipage环境这样的竖直盒子也可以作为\sbox或者\savebox命令中的文本，从而保存起来，以后可以通过\usebox调用它们
+	%盒子样式参数
+	%对于有框盒子\fbox和\framebox，有两个用户可以重设的样式参数
+	%\fboxrule 确定方框线的粗细
+	%\fboxsep 设置方框与被包围文本之间的距离大小
+	\newpage
+	%表格
+	%构造表格
+	%\begin{array}[位置]{列} 行 \end{array}
+	%\begin{tabular}[位置]{列} 行 \end{tabular}
+	%\begin{tabular*}{宽度}[位置]{列} 行 \end{tabular*}
+	%array环境只能用在数学模式中，参数意义如下
+	%位置：竖直定位参数，取值：t，b
+	%宽度：确定整体宽度。在这种情形下，[列]参数必须在第一项后面某个地方包含@表达式(@{extracolsep{\fill}},其它两种环境，整体宽度由文本内容确定
+	%列：列格式参数，可能的列格式符号：l(列内容是左对齐的),r(列内容是右对齐的),c(列内容是居中的),p{宽}(该列的文本设置成具有给定宽的行),*{数}{列}(包含在列中的列格式被复制了数份，因此*{5}{|c}的结果与|c|c|c|c|c相同)
+	%行：由表格的实际条目组成，每一水平行都由\\结束，这些行由一组彼此之间用&符号分开的列条目组成
+	%\tabularnewline结束一行，明确的行结束符，而\\可以在一个行条目中结束一个文本行
+	%为了使表格在页面上居中表格必须包围在\begin{center} 表格 \end{center}
+	%表格样式参数
+	%\tabclosep 插入在tabular和tabular*环境中两列间距离的一半
+	%\arrayclosep 在array环境中相应于列间距的一半
+	%\arrayrulewidth 表格中水平线与竖直线的粗细
+	%\doublerulesep 双直线时两线之间的距离
+	%可以用\setlength命令改变这些参数的值，如\setlength{\arrayrulewidth}{0.5mm}直线粗变为0.5mm
+	%\arraystrecth 修改表格中的行间距，标准值为1，\renewcommand{arraystrecth}{因子}
+	\begin{tabular}{rlcrrrcc}
+	Position & Club & Games & W & T & L & Goals & Points\\[0.5ex]
+	1 & Amesville Rockets & 33 & 19 & 13 & 1 & 66:31 & 51:15 \\
+	2 & Borden Comets     & 33 & 18 &  9 & 6 & 65:37 & 45:21 \\
+	... & ......          & .. & .. & .. & .. &...   & ...   \\
+	17 & Quincy Giants    & 33 & 7  & 5  & 21 & 40::89 & 19:47 \\
+	18 & Ralston Regulars & 33 & 3  & 11 & 19 & 37:74 & 17:49
+	\end{tabular}
+	\begin{tabular}{|r|l||c|rrr|c|c|}\hline
+	Position & Club & Games & W & T & L & Goals & Points\\[0.5ex]
+	\hline\hline
+	1 & Amesville Rockets & 33 & 19 & 13 & 1 & 66:31 & 51:15 \\
+	\hline
+	2 & Borden Comets     & 33 & 18 &  9 & 6 & 65:37 & 45:21 \\
+	\hline
+	... & ......          & .. & .. & .. & .. &...   & ...   \\
+	\hline
+	17 & Quincy Giants    & 33 & 7  & 5  & 21 & 40::89 & 19:47 \\
+	\hline
+	18 & Ralston Regulars & 33 & 3  & 11 & 19 & 37:74 & 17:49 \\
+	\hline
+	\end{tabular}
+	\begin{tabular}{|r|l||@{ 33 }|rrr|r@{:}l|r@{:}l|}\hline
+	Position & Club & W & T & L & \multicolumn{2}{c}{Goals} & \multicolumn{2}{c}{Points}\\[0.5ex]
+	4 & Daysdon Bombers     & 14 & 10 &  9 & 66 & 50 & 38 & 28 \\
+	\hline
+	\end{tabular}
+	\begin{tabular}{|r|l||rrr|r@{:}l|r@{:}l|||c|}\hline
+	\multicolumn{10}{|c|}{\bfseries 1st Regional Soccer League --- Final Results 1994/95} \\ \hline
+	& \itshape Club & \itshape W & \itshape T & \itshape L & \multicolumn{2}{c}{\itshape Goals} & \multicolumn{2}{c}{\itshape Points} & \itshape Remarks \\ \hline\hline
+	\end{tabular}
 	\newpage
 	%参考文献
 	\begin{thebibliography}{+} %标签样式
