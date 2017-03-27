@@ -369,10 +369,54 @@
 	\hline
 	\end{tabular}
 	\begin{tabular}{|r|l||rrr|r@{:}l|r@{:}l|||c|}\hline
-	\multicolumn{10}{|c|}{\bfseries 1st Regional Soccer League --- Final Results 1994/95} \\ \hline
+	\multicolumn{10}{|c|}{\rule[-3mm]{0mm}{8mm}bfseries 1st Regional Soccer League --- Final Results 1994/95} \\ \hline
 	& \itshape Club & \itshape W & \itshape T & \itshape L & \multicolumn{2}{c}{\itshape Goals} & \multicolumn{2}{c}{\itshape Points} & \itshape Remarks \\ \hline\hline
 	\end{tabular}
+	\begin{tabular}{lp{8.0cm}r}
+	\bfseries Model & Description & \bfseries Price \\[1ex]
+	GXT 1 & \small{\bfseries The PC Compatible}:Intel 80386, 1MB main memory, color graphic card, multi--I/D card, 2 drives 1.2MB, 17`` monitor, keyboard, MS-DOS~6.2, GW Basis & 883.70\\
+	\end{tabular}
+	\newsavebox{\kk}\newsavebox{\kkk}
+	\sbox{\kk}{\framebox[4mm]{\rule{0mm}{3mm}}}
+	\sbox{\kkk}{\usebox{\kk}\usebox{\kk}\usebox{\kk}}
+	\begin{tabular} {|l|c|c|c|}\hline
+		\multicolumn{4}{|c|}{\rule[-0.3cm]{0mm}{0.8cm}\bfseries Budget Plan 1995--1997}\\
+		\hline\hline
+		\rule[-0.4cm]{0mm}{1cm}Project & \multicolumn{3}{l|}{Nr. \usebox{\kkk}\hspace{0.5cm} \vline \hspace{0.5cm} Name \usebox{\kkk}\usebox{\kkk}\usebox{\kkk}\usebox{\kkk}}\\ \hline
+		\multicolumn{1}{|r|}{Year} & 1995 &1996 & 1997 \\
+		\cline{2-4}
+		& (GB \pounds) \vline\ US \$ & (GB \pounds) \vline\ US \$ & (GB \pounds) \vline\ US \$ \\ \hline
+		Investment & \hspace{2.5cm} & \hspace{2.5cm} & \hspace{2.5cm} \\
+		Costs & & & \\ \hline
+		Operating & & & \\
+		Costs & & & \\ \hline
+		Industrial & & & \\
+		Contract & & & \\ \hline
+		\multicolumn{4}{|l|}{\rule[-1.2cm]{0mm}{1.5cm}Signature \hspace{5cm}\vline~Authorization} \\ \hline
+	\end{tabular}
+	%浮动表格
+	%\begin{table} 上部文本 表格 下方文本 \end{table}
+	\begin{table}{\bfseries Primary Energy Consumption} \\ [1ex]
+		\begin{tabular*}{118mm}{@{}llrr@{}}
+		Energy Source & 1975 & 1980 & 1986 \\ \hline
+		\cline{1-4}
+		Total Consumption\\
+		(in million tons of BCU) & 347.7 & 390.2 & 385.0 \\
+		of which (percentagers) \\
+			pertroleum & 52.1 & 47.6 & 43.2 \\
+		\end{tabular*} \\ [0.5ex]
+		\emph{Source:} Energy Balance Study Group...
+	\end{table}
+
 	\newpage
+	
+	%显示源文本
+	%\begin{verbatim} 源文本 \end{verbatim}
+	%\begin{verbatim}* 源文本 \end{verbatim*}
+	\begin{verbatim}
+		\addtocounter{footnote}{-1}\footnotetext{Small insect}
+		\stepcounter{footnote}\footnotetext{Large mammals}
+	\end{verbatim}
 	%参考文献
 	\begin{thebibliography}{+} %标签样式
 		\bibitem[Label]{Keyword}references
