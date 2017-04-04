@@ -413,10 +413,50 @@
 	%显示源文本
 	%\begin{verbatim} 源文本 \end{verbatim}
 	%\begin{verbatim}* 源文本 \end{verbatim*}
+	%\verbc 源文本 c
+	%\verb*c 源文本 c 		%c为不出现于源文本中的任一字符，源文本不能有断行
 	\begin{verbatim}
 		\addtocounter{footnote}{-1}\footnotetext{Small insect}
 		\stepcounter{footnote}\footnotetext{Large mammals}
 	\end{verbatim}
+	\verb=\xyz{ }= %=用来做为定界符c
+	\newline
+	%脚注和边注
+	%标准脚注
+	%\footnote{脚注文本}
+	%在article类中，整个文档统一编号，在report和book类中，每当开始新的一章市都会重置为1，不能位于数字模式或LR模式中
+	%非标准脚注
+	%\setcounter{footnote}{0} %article类中每当开始新的一节时，脚注编号重置为1
+	%\renewcommand{\thefootnote}{\数字样式{footnote}}
+	%数字样式：\arabic \roman \alph \Alph \fnsymbol
+	\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+	footnote\footnote[7]{the seven mark symbol}
+	\renewcommand{\thefootnote}{\arabic{footnote}}
+	%禁止模式中的脚注
+	%\footnotemark[数] %插入脚注标记
+	%\footnotetext[数]{脚注文本} %生成脚注文本 数选项与\footnotemark中的一致
+	%\addttocounter{footnote}{差} %调整计数器的值，当\footnotemark命令没有可省参数时，调用一次会使计数器增1，而相应的\footnotetext命令并不改变计数器的值
+	%\stepcounter{footnote} %给计数器增1
+	For example: \fbox{mosquitoes\footnotemark\ and elephants\footnotemark}
+	\addtocounter{footnote}{-1} \footnotetext{Samll insects}
+	\stepcounter{footnote}\footnotetext{Large mammals}
+	%小页环境中的脚注
+	%脚注显示在小页结束时的表格下方
+	%脚注样式参数
+	%footnotesep 两个脚注间的竖直距离，用\setlength命令修改这个长度
+	%\footnoterule 在正文和脚注之间画一条水平线，不会增加竖直间距
+	%\renewcommand{\footnoterule}{\rule{宽度}{高度}\vspace{-高度}}
+	%边注
+	%\marginpar{注释文本}
+	%\marginpar[左文本]{右文本} %包含页边文本的两个版本，左文本出现在左边，右文本出现在右边
+	\begin{marginpar}{\rule[-17.5mm]{1mm}{20mm}}
+	\end{marginpar}
+	\marginpar[\hfill$\Longrightarrow$]{$\Longleftarrow$}
+	%边注的样式参数
+	%\marginparwidth 定义边注盒子的宽度
+	%\marginparsep 设置边注盒子与正文边界之间的距离
+	%\marginparpush 两个边注盒子之间的最小竖直距离
+	%用\setlength命令赋予新值
 	%参考文献
 	\begin{thebibliography}{+} %标签样式
 		\bibitem[Label]{Keyword}references
