@@ -51,27 +51,51 @@
 		\right.
 	\]
 	
+	%数学公式
+	%正文公式或者方程的生成：
+	%1、\begin{math} 公式文本 \end{math}
+	%2、\(公式文本\)
+	%3、$公式文本$
+	%显示公式或者方程的生成
+	%\begin{displaymath} 公式文本 \end{displaymath} %无编号
+	%\begin{equation} 公式文本 \end{equation} %自动加上公式编号
+	%\[公式文本\] %同displaymath
+	%创建多行公式
+	%\begin{eqnarray} 公式文本 \end{eqnarray} %自动加上公式编号
+	%\begin{eqnarray*} 公式文本 \end{eqnarray*} %无编号
+	%数学公式的主要组成
+	%显示公式中的{}：\{,\}
 	$M(s)<M(t)<|M|=m$
 	$y''=c\{f[y',y(x)] + g(x)\}$
+	%指数和指标：^(把紧接下来的字符作为指数),_(把紧接下来的字符作为指标)
 	\begin{displaymath}
 		x^2 a_n x^n_i x_i^n
 		x^{2n} x_{2y} a_{i,j,k}^{-n!2}
 		x^{y^2} x^{y_1}
 		A^{x_i^2}_{j^{2n}_{n,m}}
 	\end{displaymath}
+	%分数：/,\frac{分子}{分母}
 	$(n+m)/2$
 	$\frac{1}{x+y}$
 	$\frac{a^2 - b^2}{a+b} = a-b$
 	\[ \frac{\frac{a}{x-y} + \frac{b}{x+y}}{1+\frac{a-b}{a+b}} \]
+	%方根
+	%\sqrt[开方数]{参数} 开方数默认2
 	$\sqrt[3]{8} = 2$
 	$\sqrt{a}$
+	%求和(\sum)与积分(\int)
 	$\sum_{i=1}^n$
 	$\int_a^b$
 	$\int\limits_{x=0}^{x=1}$
 	$\int y\,dx$
 	$\int f(z)\,dz$
+	%连续点，省略号
+	%\ldots 偏下的点 \cdots 中间点 \vdots 竖直点 \ddots 对角点
 	$a_0, a_1,\ldots,a_n$
 	$a_0 + a_1 + \cdots + a_n$
+	%\ldots命令可以用在普通的文本模式中，其余三条命令只能用在数学模式中，文本模式中，\dots命令可以代替\ldots
+	%数学符号
+	%希腊字母：只能用在数学模式中
 	\begin{displaymath}
 		\alpha \theta o \tau
 		\beta \vartheta \pi \upsilon
@@ -82,12 +106,16 @@
 		\zeta \nu \varsigma \omega
 		\eta \xi
 	\end{displaymath}
+	%大写字母
 	\begin{displaymath}
 		\Gamma \Lambda \Sigma \Psi
 		\Delta \Xi \Upsilon \Omega
 		\Theta \Pi	\Phi
 	\end{displaymath}
+	$\mathnormal{\Gamma\Pi\Phi}$ %斜体
+	%花体字母
 	$\mathcal{A, B, C,...,Z}$
+	%二元运算符
 	\begin{displaymath}
 		\pm \cap \circ \bigcirc
 		\mp \cup \bullet \Box
@@ -100,6 +128,7 @@
 		\ddagger \ominus \odot \wr
 		\amalg \otimes
 	\end{displaymath}
+	%关系运算符及其否定
 	\begin{displaymath}
 		\le \leq \ge \geq \neq \sim
 		\ll \gg \doteq \simeq
@@ -111,9 +140,11 @@
 		\vdash \dashv \preceq \succeq
 		\models \perp \parallel \mid |
 	\end{displaymath}
+	%斜杠贯穿符号可用命令\not
 	\begin{displaymath}
 		\not\in \notin
 	\end{displaymath}
+	%箭头与指针
 	\begin{displaymath}
 		\leftarrow \gets \longleftarrow \uparrow
 		\Leftarrow \Longleftarrow \Uparrow
@@ -127,6 +158,7 @@
 		\leftharpoondown \rightharpoondown \nwarrow
 		\rightleftharpoons \leadsto
 	\end{displaymath}
+	%其他各类符号
 	\begin{displaymath}
 		\aleph \prime \forall \Box
 		\hbar \emptyset \exists \Diamond
@@ -138,8 +170,11 @@
 		\Im \vdash \angle \Join
 		\mho \dashv \backslash \infty
 	\end{displaymath}
+	%\limits 强迫上下限放在符号的上方和下方
+	%\nolimits 上下限在位于符号的旁边
 	\[\oint^\infty_0 \oint\limits^\infty_0 \] \\
 	\[\prod^n_{\nu=0} \prod\nolimits^n_{\nu=0} \] \\
+	%函数名:加上命令字符\
 	\begin{displaymath}
 		\arccos \cosh \det \inf \limsup \Pr \tan \\
 		\arcsin \cot \dim \ker \ln \sec \tanh \\
@@ -149,6 +184,7 @@
 	\end{displaymath}
 	$ a \bmod b$ \\
 	$ y \pmod{a+b}$
+	%数学重音
 	\begin{displaymath}
 		\hat{a} \breve{a} \grave{a} \bar{a} \\
 		\check{a} \acute{a} \tilde{a} \vec{a} \\
@@ -158,6 +194,67 @@
 	$\vec{\imath} + \tilde{\jmath}$ \\
 	$\widehat{1-x}=\widehat{-y}$ \\
 	$\widetilde{xyz}$ \\
+	%括号符号的尺寸自动调整
+	%\left 左括号 部分公式 \right 右括号
 	\[ \left[ \int + \int \right]_{x=0}^{x=1} \] \\
 	\[ y= \left\{\begin{array}{r@{\quad:\quad}l}-1 & x < 0 \\ 0 & x=0 \\ +1 & x > 0 \end{array} \right.\] \\
+	%\left \right 命令必须成对出现，如果没有right，只能用'.'来表示看不见的括号符号
+	%公式中的普通文本
+	%\mbox{普通文本}
+	\[X_n = X_k \qquad \mbox{ if and only if} \qquad Y_n = Y_k \quad \mbox{and} \quad Z_n = Z_k \]
+	$\mathbf{B}^0(x)$ \quad $\mathsf{T}^i_j$
+	$\mathnormal{differ} \ne \mathit{differ}$
+	%矩阵和域（行列式、方程组等，统称为域
+	%域用array环境生成
+	\[\begin{array}{*{3}{c@{\:+\:}}c@{\;=\;}c} %\begin{array}{c@{\:+\:}c@{\:+\cdots+\:}c@{\;+\;}c}
+		a_{11}x_1 & a_{12}x_2 & \cdots & a_{1n}x_n & b_1\\
+		a_{21}x_1 & a_{22}x_2 & \cdots & a_{2n}x_n & b_2\\
+			\multicolumn{5}{c}{\dotfill}			\\
+		a_{n1}x_1 & a_{n2}x_2 & \cdots & a_{nn}x_n & b_n
+	\end{array} \]
+	%@{文本}在相邻的两列间插入文本的内容
+	%\:和\;用来生成数学模式中小的水平间距
+	%*{3}{c@{\:+\:}}列定义c@{\:+\:}的三次重复，c规定了列文本是居中排列的
+	\[ \left(\begin{array}{c}
+		\left|\begin{array}{cc}
+		x_{11} & x_{12} \\ x_{21} & x_{22}
+		\end{array} \right|
+		x \\y \end{array} \right) \]
+	\[ \sum_{p_1<p_2<cdots<p_{n-k}}^{(1,2,\ldots,n)}
+		\Delta_{\begin{array}{l}
+			p_1p_2\cdots p_{n-k} \\ p_1p_2\cdots p_{n-k}
+		  \end{array}}
+	\sum_{q_1<q_2<\cdots<q_k} \left| \begin{array}{llcl}
+			a_{q_1q_1} & a_{q_1q_2} & \cdots & a_{q_1q_k} \\
+			a_{q_2q_1} & a_{q_2q_2} & \cdots & a_{q_2q_k} \\
+				\multicolumn{4}{c}\dotfill \\
+			a_{q_kq_1} & a_{q_kq_2} & cdots & a_{q_kq_k}
+				\end{array} \right| \]
+	\[ x - \begin{array}{c}
+		a_1 \\ \vdots \\ a_n \end{array}
+	- \begin{array}[t]{cl}
+		u - v & 10 \\
+		u + v & \begin{array}[b]{r}
+			12\\-120 \end{array}
+		\end{array}		\]
+	%公式上下的直线
+	%\overline{部分公式} 和 \underline{部分公式}
+	%\underline也可在普通文本模式中生成下划线，\overline只能用在数学模式中
+	\[ \overline{\overline{a}^2 + \underline{xy} + \overline{\overline{z}}} \]
+	%\overbrace{部分公式} 和 \underbrace{部分公式} 在部分公式的上方或下方放上一个水平的大括号
+	\[ \overbrace{a + \underbrace{b + c} + d} \]
+	\[ \underbrace{a + \overbrace{b + \cdots + y}^{123} + z}_{\alpha\beta\gamma} \]
+	%堆积符号
+	%\stackrel{上部符号}{下部符号}
+	$\vec{x} \stackrel{\mathrm{def}}{=}(x_1,\cdots, x_n)$ \\
+	$ A \stackrel{\alpha'}{\longrightarrow} B ... $\\
+	%其他的数学命令
+	%{顶部公式 \atop 底部公式} {顶部公式 \choose 底部公式}
+	%\choose命令，该结构被包含在小括号内
+	%\begin{array}{c}顶部行 \\ 底部行 \end{array} 同（atop）
+	%\left(\begin{array}{c} 顶部行 \\ 底部行 \end{array}\right) 同（choose）
+	\[ {n+1 \choose k} = {n \choose k} + {n \choose k-1} \]\\
+	\[ \prod_{j\ge0}\left( \sum_{k\ge0} a_{jk}z^k \right) = 
+		\sum_{n\ge0} z^n \left(\sum_{k_0, k_1, \ldots\ge0 \atop
+		k_0 + k_1 +\cdots = 0} a_{0k_0} a_{1k_1}\ldots \right) \]\\
 \end{document}
