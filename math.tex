@@ -257,4 +257,49 @@
 	\[ \prod_{j\ge0}\left( \sum_{k\ge0} a_{jk}z^k \right) = 
 		\sum_{n\ge0} z^n \left(\sum_{k_0, k_1, \ldots\ge0 \atop
 		k_0 + k_1 +\cdots = 0} a_{0k_0} a_{1k_1}\ldots \right) \]\\
+	%多行公式
+	%\begin{eqnarray} 第一行\\...\\第n行 \end{equarray} %有顺序的编号
+	%\begin{eqnarray*} 第一行\\...\\第n行 \end{equarray*} %没有编号
+	%array环境和eqnarray环境之间的差别：后者排版为显示公式
+	%为了不给标准形式中某行公式加编号，可以在该行公式的结束符\\前面插入命令\nonumber
+	%公式中的编号可以在正文中用\ref{引用名}命令引用,这里的引用名就是要用\label{引用名}命令赋给某一行公式的关键词
+	\begin{eqnarray}
+		(x+y)(x-y) & = & x^2-xy+xy-y^2 \nonumber\\
+				& = & x^2 - y^2 \\
+		(x+y)^2   & = & x^2 + 2xy + y^2
+	\end{eqnarray}
+	\begin{eqnarray*}
+		x_nu_1 + \cdots + x_{n+t-1}u_t & = & x_nu_1 + (ax_n + c)u_2 + \cdots\\
+		& & + \left(a^{t-1}x_n + c(a^{t-2} + \cdots + 1)\right)u_t \\
+		& = & (u_1 + au_2 + \cdots + a^{t-1}u_t)x_n + h(u_1, \ldots, u_t)
+	\end{eqnarray*}
+	%\left(...\right)对，只能位于一行中
+	\begin{eqnarray*}
+		y & = & a + b + c + d\\
+		 &   & + c + f +g \\
+		&   & {} + h + i + j %{}区分正负号和加减符号
+	\end{eqnarray*}
+	\begin{eqnarray*}
+		\lefteqn{w+x+y+z = }\\ % \lefteqn{...}和行结束符之间插入\hspace{深度}命令来改变缩进深度，正的深度会增加缩进，负值则减少缩进
+		& & a+b+c+d+e+f+\\
+		& & g+h+i+j+k+l
+	\end{eqnarray*}
+	%有框公式和并列公式
+	\parbox{4cm}{\begin{eqnarray} \alpha & = & f(z) \\
+						\beta & = & f(z^2) \\
+						\theta & = & f(z^3)
+			\end{eqnarray}}
+		\hfill \parbox{2.5cm}{\begin{eqnarray*}
+			x & = & \alpha^2 - \beta^2 \\
+			y & = & 2\alpha\beta
+			\end{eqnarray*}}
+	%给一组公式加上竖直居中的编号
+	\parbox{10cm}{\begin{eqnarray*}
+			P(x) & = & a_0 + a_1x + a_2x^2 + \cdots + a_nx^n\\
+			P(-x) & = & a_0 - a_1x + a_2x^2 - \cdots + (-1)^na_nx^n
+			\end{eqnarray*}} \hfill
+	\parbox{1cm}{\begin{eqnarray} \end{eqnarray}}
+	%正文公式加上方框
+	\fbox{$a+b$}\\
+	\fbox{\parbox{5cm}{\[ \int ^ \infty_0 f(x)\,dx \approx \sum_{i = 1}^n w_i e^{x_i} f(x_i) \]}}
 \end{document}
