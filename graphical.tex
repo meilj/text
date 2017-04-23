@@ -1,0 +1,41 @@
+%图形
+\documentclass{article}
+\begin{document}
+	%设置单位长度，默认值1pt
+		%\setlength{\unitlength}{长度}
+	%坐标原点在左下角
+	%图形环境
+		%\begin{picture}(x尺寸, y尺寸) 画图命令 \end{picture}
+	%定位命令
+		%\put(x-坐标, y-坐标){图形元素}
+		%\multiput(x-坐标, y-坐标)(x-增量, y-增量){数}{图形元素}
+		%（x-坐标, y-坐标)为安置坐标， \multiput把同样的图形元素生成数次，每次移动(x-增量, y-增量)
+		%对于坐标项，小数点必须是句号，而不能是逗号
+	%基本画图命令
+		%图形中的盒子-矩形
+			%\makebox(x-尺寸, y-尺寸)[位置]{文本}   %没有矩形框
+			%\framebx(x-尺寸, y-尺寸)[pos]{text}	   %有矩形框
+			%\dashbox{虚线尺寸}(x-尺寸, y-尺寸)[位置]{文本}  %矩形框为虚线
+				%(x-尺寸, y-尺寸)为矩形的宽度和高度
+				%位置定义了文本在盒子中的位置，取值如下：
+					%[t] top-输入文本水平居中的位于盒子顶边的下面
+					%[b] bottom-输入文本水平居中的位于盒子低边的上面
+					%[l] left-输入文本竖直居中的位于盒子的左边
+					%[r] right-输入文本竖直居中的位于盒子的右边
+					%[s] stretch-输入文本竖直居中，但要水平伸展以充满整个盒子
+					%可以两个组合使用:[tl] [tr] [bl] [br],顺序无关紧要
+	\setlength{\unitlength}{1cm}
+	\begin{picture}(4, 4)
+		\put(0.0, 1.95){\framebox(2, 1.0)[t]{top center}}
+		\put(3.0, 1.95){\framebox(2, 0.8)[lb]{bot, left}}
+		\put(3.0, 3.2){\framebox(2, 0.6)[r]{center right}}
+		\put(2.0, 0.3){\framebox(2, 0.6)[s]{center\hfill stretch}}
+	\end{picture}
+	\newline
+	\begin{picture}(4, 5)
+		\put(0.0, 1.95){\makebox(2, 1.0)[t]{top center}}
+		\put(3.0, 1.95){\makebox(2, 0.8)[lb]{bot, left}}
+		\put(3.0, 3.2){\makebox(2, 0.6)[r]{center right}}
+		\put(2.0, 0.3){\dashbox{0.2}(2, 0.6)[s]{center\hfill stretch}}
+	\end{picture}
+\end{document}

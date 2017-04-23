@@ -301,5 +301,44 @@
 	\parbox{1cm}{\begin{eqnarray} \end{eqnarray}}
 	%正文公式加上方框
 	\fbox{$a+b$}\\
-	\fbox{\parbox{5cm}{\[ \int ^ \infty_0 f(x)\,dx \approx \sum_{i = 1}^n w_i e^{x_i} f(x_i) \]}}
+	\fbox{\parbox{5cm}{\[ \int ^ \infty_0 f(x)\,dx \approx \sum_{i = 1}^n w_i e^{x_i} f(x_i) \]}}\\
+	%化学方程式和数学公式中的黑体(\mathbf \bf)
+		$\mathbf{S^{-1}TS = db(\omega_1, \ldots, \omega_n) = \Lambda}$
+		%\mathbf只有数字、小写和大写的拉丁字母以及大写的希腊字母被设置为黑体，小写的希腊字母和其他数学符号仍然是普通数学字体
+		%\boldmath把所有字符设为黑体，下列符号例外：1、上升或下降的符号（指数和指标） 2、字符 + ：；| ? () [] 3、有两种尺寸的符号
+		%\boldmath命令不能位于数学模式中，必须在切换进入数学模式之前或者在子段盒子及小页环境中使用
+		%\unboldmath把数学字体重设回正常的字样
+		\boldmath \[ \oint\limits_C V\,d\tau = \oint\limits_\Sigma\nabla\times V\,d\sigma \] \unboldmath
+		\boldmath\(P = \mbox{\unboldmath$m$}b\) \unboldmath
+		%化学公式用\mathrm \rm
+		$\mathrm{Fe_2^{2+}Cr_2O_4}$
+%精调
+	%水平间距
+		%\, 小间距 = 3/18 of a quad
+		%\: 中间距 = 4/18 of a quad
+		%\; 大间距 = 5/18 of a quad
+		%\! 负间距 = -3/18 of a quad
+	%公式中的字体尺寸
+		%\displaystyle 显示公式的标准尺寸
+		%\textstyle	   正文公式的标准尺寸
+		%\scriptstyle  上下标的标准尺寸
+		%\scriptscriptstyle 更底层上下标的标准尺寸
+		\[ a_0 + \frac{1}{\displaystyle a_1
+			  + \frac{1}{\displaystyle a_2
+			  + \frac{1}{\displaystyle a_3
+			 + \frac{1}{a_4}}}} \]
+		%避免频繁输入，可以用\newcommand{\D}{\displaystyle} \newcommand{\T}{\textstyle},当需要改变尺寸时，只要输入\D或\T就可以了
+	%括号符号的手工尺寸调整
+		%\big \Big \bigg \Bigg
+		\[ \big[(a+b)\big|(c+d) \big] \]
+		\[ \bigl[(a+b) \bigl|(c+d) \bigl] \]
+		\[ \bigm[(a+b) \bigm|(c+d) \bigm] \]
+	%有框的显示公式
+		%\begin{displaymath} \fbox{$ \displaystyle 公式文本 $} \end{displaymath}	
+		%\begin{equation} \fbox{$ \displaystyle 公式文本 $}	\end{equation}
+		\begin{equation}
+			\fbox{$ \displaystyle \int^\infty_0 f(x)\, dx \approx \sum_{i = 1}^n w_i e^{x_i} f(x_i)$}
+		\end{equation}
+		%修改\fboxsep参数可以改变方框和方程距离
+		%修改\fboxrule参数可以改变方框的粗细
 \end{document}
